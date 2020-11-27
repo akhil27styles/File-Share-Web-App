@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon server.js",
     "serve": "node server.js"
+    
   },
   "author": "akhil",
   "license": "ISC",
