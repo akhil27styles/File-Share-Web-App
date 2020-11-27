@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
 const path = require('path');
 const cors = require('cors');
 // Cors 
@@ -34,5 +33,5 @@ app.use('/api/files', require('./routes/files'));
 app.use('/files', require('./routes/show'));
 app.use('/files/download', require('./routes/download'));
 
-
-app.listen(PORT, console.log(`Listening on port ${PORT}.`));
+const PORT = process.env.PORT || 3000;
+app.set(PORT, console.log(`Listening on port ${PORT}.`));
