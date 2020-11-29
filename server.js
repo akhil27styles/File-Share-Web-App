@@ -1,14 +1,14 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-// const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 const path = require('path');
 const cors = require('cors');
 // Cors 
-// const corsOptions = {
-//   origin: process.env.ALLOWED_CLIENTS.split(',')
-//   // ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:3300']
-// }
+const corsOptions = {
+  origin: process.env.ALLOWED_CLIENTS.split(',')
+  // ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:3300']
+}
 
 // Default configuration looks like
 // {
@@ -35,8 +35,4 @@ app.use('/files', require('./routes/show'));
 app.use('/files/download', require('./routes/download'));
 
 
-// app.listen(PORT, console.log(`Listening on port ${PORT}.`));
-var server = app.listen(process.env.PORT || 5000, function () {
-  var port = server.address().port;
-  console.log("Express is working on port " + port);
-});
+app.listen(PORT, console.log(`Listening on port ${PORT}.`));
